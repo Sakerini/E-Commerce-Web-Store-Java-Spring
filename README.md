@@ -14,5 +14,5 @@ The Spring Web MVC framework provides model-view-controller architecture and rea
   - The Controller is responsible for proccessing user requests and building appropriate model and passes it to the view for rendering.
 
 ![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC.png)
-![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC-framework.png
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC-framework.png)
 
