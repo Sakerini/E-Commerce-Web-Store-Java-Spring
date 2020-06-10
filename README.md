@@ -3,7 +3,7 @@ E-Commerce Music Web Store
 
 Diagram:
 
-![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/Docs/flow-diagram.png)
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/flow-diagram.png)
 
 # Model View Controller
 
@@ -13,6 +13,6 @@ The Spring Web MVC framework provides model-view-controller architecture and rea
   - The View is responsible for rendering the model data and in general it generates HTML output that the client's browser can interpret
   - The Controller is responsible for proccessing user requests and building appropriate model and passes it to the view for rendering.
 
-![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/Docs/MVC.png)
-![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/Docs/MVC-framework.png)
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC.png)
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC-framework.png
 
