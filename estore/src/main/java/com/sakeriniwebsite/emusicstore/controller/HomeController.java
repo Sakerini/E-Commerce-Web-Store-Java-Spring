@@ -2,6 +2,8 @@ package com.sakeriniwebsite.emusicstore.controller;
 
 import com.sakeriniwebsite.emusicstore.dao.ProductDAO;
 import com.sakeriniwebsite.emusicstore.model.Product;
+import com.sakeriniwebsite.emusicstore.service.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,7 +15,8 @@ import java.util.List;
 @Controller
 public class HomeController {
 
-    private ProductDAO productDAO = new ProductDAO();
+    @Autowired
+    private ProductService productService;
 
     @RequestMapping("/home")
     public String home() {
@@ -22,7 +25,7 @@ public class HomeController {
 
     @RequestMapping("/productlist")
     public String getProducts(Model model) {
-        List<Product> products = productDAO.getProductList();
+        List<Product> products = productService.getAllProduct();
         model.addAttribute("products", products);
 
         return "productList";
@@ -30,7 +33,7 @@ public class HomeController {
 
     @RequestMapping("/productlist/viewproduct/{productId}")
     public String viewProduct(@PathVariable String productId, Model model) throws IOException {
-        Product product = productDAO.getProductById(productId);
+        Product product = productService.getProductById(productId);
         model.addAttribute(product);
         return "viewProduct";
     }

@@ -1,6 +1,11 @@
 package com.sakeriniwebsite.emusicstore.model;
 
+import javax.persistence.*;
+
+@Entity
 public class Product {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String productId;
     private String productName;
     private String productCategory;
