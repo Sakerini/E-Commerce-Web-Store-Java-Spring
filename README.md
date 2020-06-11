@@ -16,3 +16,12 @@ The Spring Web MVC framework provides model-view-controller architecture and rea
 ![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC.png)
 ![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/MVC-framework.png)
 
+# Object-relational mapping
+
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/whatisdatapersistance.png)
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/problem.png)
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/howtomap.png)
+![](https://github.com/Sakerini/E-Commerce-Web-Store-Java-Spring/blob/master/Docs/OrmProvider.png)
+
+
+
