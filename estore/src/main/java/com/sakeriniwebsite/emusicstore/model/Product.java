@@ -1,12 +1,14 @@
 package com.sakeriniwebsite.emusicstore.model;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String productId;
+    private int productId;
     private String productName;
     private String productCategory;
     private String productDescription;
@@ -16,11 +18,22 @@ public class Product {
     private int unitInStock;
     private String productManufacturer;
 
-    public String getProductId() {
+    @Transient // we dont want this file to be persistance so that why we put Transient ...
+    private MultipartFile productImage;
+
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
+    }
+
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 

@@ -20,7 +20,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(String id) {
+    public Product getProductById(int id) {
         Optional<Product> result = productDAO.findById(id);
         Product product = null;
         if (result.isPresent()) {
@@ -38,7 +38,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public void deleteProduct(String id) {
+    public void deleteProduct(int id) {
         productDAO.deleteById(id);
     }
 }

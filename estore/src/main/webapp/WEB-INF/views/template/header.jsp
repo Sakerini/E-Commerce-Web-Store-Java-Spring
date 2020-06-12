@@ -15,6 +15,9 @@
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/static/css/bootstrap.min.css"/> " rel="stylesheet">
+    <!-- Main CSS -->
+    <link href="<c:url value="/resources/static/css/main.css"/> " rel="stylesheet">
+
 </head>
 <!-- NAVBAR
 ================================================== -->
