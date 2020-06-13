@@ -5,15 +5,18 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Add Product</h1>
+            <h1>Edit Product</h1>
 
-            <p class="lead">Fill the below information to add a product:</p>
+            <p class="lead">Fill the below information to Edit a product:</p>
         </div>
 
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/addProduct"
+        <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct"
                    method="post" modelAttribute="product" enctype="multipart/form-data">
+
+        <!-- Very Important for Updating the product otherwise id will be null and new product will be created -->
+        <form:hidden path="productId" value="${product.productId}" />
         <div class="form-group" >
-            <label for="name">Name</label> <form:errors path="productName" cssStyle="color: #ff0000" />;
+            <label for="name">Name</label> <form:errors path="productName" cssStyle="color: #ff0000"/>;
             <form:input path="productName" id="name" class="form-Control" />
         </div>
 

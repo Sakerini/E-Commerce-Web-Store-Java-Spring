@@ -3,18 +3,25 @@ package com.sakeriniwebsite.emusicstore.model;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int productId;
+    @NotEmpty(message = "Product name is required")
     private String productName;
     private String productCategory;
     private String productDescription;
+
+    @Min(value = 0, message = "Product price must not be less than zero")
     private double productPrice;
     private String productCondition;
     private String productStatus;
+
+    @Min(value = 0, message = "Unit in stock can not be less than zero")
     private int unitInStock;
     private String productManufacturer;
 

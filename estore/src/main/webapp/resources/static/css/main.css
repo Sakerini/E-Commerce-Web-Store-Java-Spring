@@ -2,3 +2,15 @@
     table-layout: fixed;
     overflow: auto;
 }
+.container-wrapper {
+    height: 100%;
+    mergin: auto;
+    margin-top: 80px;
+    margin-bottom: 300px;
+}
+
+.home-image {
+    display: block;
+    width: 100% !important;
+    height: auto !important;
+}

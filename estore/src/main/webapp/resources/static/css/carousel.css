@@ -44,6 +44,8 @@ body {
 }
 .carousel-caption {
   z-index: 10; /* Since positioning the image, we need to help out the caption */
+  top: 60px;
+  bottom: auto;
 }
 
 /* Declare heights because of positioning of img element */
@@ -97,9 +99,9 @@ body {
 
 @media (min-width: 768px) {
   /* Navbar positioning foo */
-  .navbar-wrapper {
+/*  .navbar-wrapper {
     margin-top: 20px;
-  }
+  }*/
   .navbar-wrapper .container {
     padding-right: 15px;
     padding-left: 15px;
