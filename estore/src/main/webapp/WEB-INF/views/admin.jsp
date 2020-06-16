@@ -9,6 +9,12 @@
             <p class="lead">This is an administrator's page</p>
         </div>
 
+        <c:if test="${pageContext.request.userPrincipal.name != null}">
+            <h2>
+                Welcome ${pageContext.request.userPrincipal.name} | <a href="<c:url value="/logout"/>">Log out</a>
+            </h2>
+        </c:if>
+
         <h3>
             <a href="<c:url value="/admin/productInventory" />" >Product Invenotry</a>
         </h3>

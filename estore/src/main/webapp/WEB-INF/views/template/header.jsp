@@ -10,7 +10,6 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
     <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/carousel/">
-
     <title>E-Music Store</title>
 
     <!-- Bootstrap core CSS -->
