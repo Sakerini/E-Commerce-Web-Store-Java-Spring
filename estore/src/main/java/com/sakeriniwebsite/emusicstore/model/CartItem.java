@@ -5,12 +5,12 @@ import lombok.Data;
 @Data
 public class CartItem {
     private Product product;
-    private int qunatity;
-    private double totalPrica;
+    private int quantity;
+    private double totalPrice;
 
     public CartItem(Product product) {
         this.product = product;
-        this.qunatity = 1;
-        this.totalPrica = product.getProductPrice();
+        this.quantity = 1;
+        this.totalPrice = product.getProductPrice();
     }
 }

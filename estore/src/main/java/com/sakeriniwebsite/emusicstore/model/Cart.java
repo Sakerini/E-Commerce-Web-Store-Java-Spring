@@ -29,9 +29,10 @@ public class Cart {
     public void addCartItem(CartItem item) {
         int productId = item.getProduct().getProductId();
 
-        if(cartItems.containsKey(productId)) {
-            CartItem existingCartItem = cartItems.get(productId);
-            existingCartItem.setQunatity(existingCartItem.getQunatity() + item.getQunatity());
+        if(cartItems.containsKey(Integer.toString(productId))) {
+            CartItem existingCartItem = cartItems.get(Integer.toString(productId));
+            existingCartItem.setQuantity(existingCartItem.getQuantity() + item.getQuantity());
+            existingCartItem.setTotalPrice(existingCartItem.getTotalPrice() + item.getTotalPrice());
             cartItems.put(Integer.toString(productId), existingCartItem);
         } else {
             cartItems.put(Integer.toString(productId), item);
@@ -49,7 +50,7 @@ public class Cart {
     public void updateGrandTotal() {
         grandTotal = 0;
         for (CartItem item : cartItems.values()) {
-            grandTotal = grandTotal + item.getTotalPrica();
+            grandTotal = grandTotal + item.getTotalPrice();
         }
     }
 }

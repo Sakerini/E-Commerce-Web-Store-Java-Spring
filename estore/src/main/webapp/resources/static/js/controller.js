@@ -25,7 +25,7 @@ cartApp.controller("cartCtrl", function ($scope, $http){
     };
 
     $scope.removeFromCart = function (productId) {
-        $http.put('/eMusicStore/rest/cart/remove/'+productId).success(function (data) {
+        $http.put('/rest/cart/remove/'+productId).success(function (data) {
             $scope.refreshCart($http.get('/rest/cart/cartId'));
         });
     };
