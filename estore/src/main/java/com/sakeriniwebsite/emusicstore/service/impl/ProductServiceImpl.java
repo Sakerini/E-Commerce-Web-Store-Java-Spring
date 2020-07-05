@@ -1,7 +1,8 @@
-package com.sakeriniwebsite.emusicstore.service;
+package com.sakeriniwebsite.emusicstore.service.impl;
 
 import com.sakeriniwebsite.emusicstore.dao.ProductDAO;
 import com.sakeriniwebsite.emusicstore.model.Product;
+import com.sakeriniwebsite.emusicstore.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

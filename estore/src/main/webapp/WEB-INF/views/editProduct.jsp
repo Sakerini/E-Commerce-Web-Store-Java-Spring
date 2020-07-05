@@ -10,7 +10,7 @@
             <p class="lead">Fill the below information to Edit a product:</p>
         </div>
 
-        <form:form action="${pageContext.request.contextPath}/admin/productInventory/editProduct"
+        <form:form action="${pageContext.request.contextPath}/admin/product/editProduct"
                    method="post" modelAttribute="product" enctype="multipart/form-data">
 
         <!-- Very Important for Updating the product otherwise id will be null and new product will be created -->

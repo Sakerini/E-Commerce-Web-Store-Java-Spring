@@ -41,12 +41,26 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="<c:url value="/home"/> ">Home</a></li>
-                        <li><a href="<c:url value="/productlist"/> ">Products</a></li>
+                        <li><a href="<c:url value="/"/> ">Home</a></li>
+                        <li><a href="<c:url value="/product/productList"/> ">Products</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">
-                        <li><a href="<c:url value="/admin"/>">Admin</a></li>
+                        <!-- login check -->
+                        <c:if test="${pageContext.request.userPrincipal.name != null}">
+                            <li><a>Welcome: ${pageContext.request.userPrincipal.name}</a></li>
+                            <li><a href="<c:url value="/logout" />">Logout</a></li>
+                            <c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+                                <li><a href="<c:url value="/customer/cart"/>">Cart</a></li>
+                            </c:if>
+                            <c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
+                                <li><a href="<c:url value="/admin"/>">Admin</a></li>
+                            </c:if>
+                        </c:if>
+                        <c:if test="${pageContext.request.userPrincipal.name == null}">
+                            <li><a href="<c:url value="/login"/>">login</a></li>
+                            <li><a href="<c:url value="/register" />">Register</a> </li>
+                        </c:if>
                     </ul>
                 </div>
             </div>
