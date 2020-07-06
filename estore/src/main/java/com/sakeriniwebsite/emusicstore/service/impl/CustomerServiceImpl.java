@@ -1,8 +1,6 @@
 package com.sakeriniwebsite.emusicstore.service.impl;
 
-import com.sakeriniwebsite.emusicstore.dao.AuthorityDAO;
 import com.sakeriniwebsite.emusicstore.dao.CustomerDAO;
-import com.sakeriniwebsite.emusicstore.dao.UserDAO;
 import com.sakeriniwebsite.emusicstore.model.*;
 import com.sakeriniwebsite.emusicstore.service.AuthorityService;
 import com.sakeriniwebsite.emusicstore.service.CartService;
