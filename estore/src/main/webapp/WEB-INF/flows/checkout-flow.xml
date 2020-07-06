@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+
+    <var name="order" class="com.sakeriniwebsite.emusicstore.model.CustomerOrder"/>
+    <action-state id="addCartToOrder" >
+        <evaluate expression="cartService.validate(requestParameters.cartId)" result="order.cart"/>
+        <transition to="InvalidCartWarning" on-exception="java.io.IOException" />
+        <transition to="collectCustomerInfo" />
+    </action-state>
+
+    <view-state id="collectCustomerInfo" view="collectCustomerInfo" model="order">
+        <transition on="customerInfoCollected" to="collectShippingDetail" />
+    </view-state>
+
+    <view-state id="collectShippingDetail" view="collectShippingDetail" model="order">
+        <transition on="shippingDetailCollected" to="orderConfirmation" />
+        <transition on="backToCollectCustomerInfo" to="collectCustomerInfo" />
+    </view-state>
+
+    <view-state id="orderConfirmation">
+        <transition on="orderConfirm" to="processOrder" />
+        <transition on="backToCollectedShippingDetail" to="collectShippingDetail" />
+    </view-state>
+
+    <action-state id="processOrder" >
+        <evaluate expression="cartItemDaoImpl.removaAllCartItems(order.cart)" />
+        <transition to="thanksCustomer" />
+    </action-state>
+
+    <view-state id="thanksCustomer" >
+        <transition to="endState" />
+    </view-state>
+
+    <end-state id="endState" />
+    <view-state id="InvalidCartWarning">
+        <transition to="endSTate" />
+    </view-state>
+
+    <end-state id="cancelCheckout" view="checkoutCancelled" />
+
+    <global-transitions>
+        <transition on="cancel" to="cancelCheckout"/>
+    </global-transitions>
+
+</flow>
