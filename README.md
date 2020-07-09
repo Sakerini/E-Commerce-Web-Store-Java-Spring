@@ -1,5 +1,5 @@
 # E-Commerce-Web-Store-Java-Spring
-E-Commerce Music Web Store :)
+E-Commerce Music Web Store 
 
 Diagram:
 
