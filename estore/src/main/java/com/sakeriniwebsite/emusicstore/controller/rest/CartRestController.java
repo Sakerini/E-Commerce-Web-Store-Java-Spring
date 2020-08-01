@@ -34,7 +34,7 @@ public class CartRestController {
 
     @RequestMapping("/{cartId}")
     public @ResponseBody
-    Cart getCartById (@PathVariable(value = "cartId") int cartId) {
+    Cart getCartById(@PathVariable(value = "cartId") int cartId) {
         return cartService.getCartById(cartId);
     }
 
@@ -49,7 +49,7 @@ public class CartRestController {
         Product product = productService.getProductById(productId);
         List<CartItem> cartItems = cart.getCartItems();
 
-        for (int i = 0; i< cartItems.size(); i++) {
+        for (int i = 0; i < cartItems.size(); i++) {
             if (product.getProductId() == cartItems.get(i).getProduct().getProductId()) {
                 CartItem cartItem = cartItems.get(i);
                 cartItem.setQuantity(cartItem.getQuantity() + 1);
@@ -87,6 +87,7 @@ public class CartRestController {
     public void handleClientErrors(Exception e) {
 
     }
+
     @ExceptionHandler(Exception.class)
     @ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR, reason = "Internal Server Error")
     public void handleServerErrors(Exception e) {

@@ -41,7 +41,7 @@ public class AuthorityServiceImpl implements AuthorityService {
     public String getAllAuthoritiesString() {
         List<Authorities> authorities = getAllAuthorities();
         StringBuilder sb = new StringBuilder();
-        for(Authorities authority : authorities) {
+        for (Authorities authority : authorities) {
             sb.append(authority.getAuthority());
             sb.append(",");
         }

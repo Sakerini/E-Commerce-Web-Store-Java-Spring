@@ -28,4 +28,13 @@ public class Cart implements Serializable {
     private Customer customer;
 
     private double grandTotal;
+
+    public double calcGrandTotal() {
+        grandTotal = 0;
+        for (CartItem item : cartItems) {
+            grandTotal += item.getTotalPrice();
+        }
+
+        return grandTotal;
+    }
 }

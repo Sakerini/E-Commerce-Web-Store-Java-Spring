@@ -1,6 +1,7 @@
 package com.sakeriniwebsite.emusicstore.controller;
 
 import com.sakeriniwebsite.emusicstore.model.BillingAddress;
+import com.sakeriniwebsite.emusicstore.model.Cart;
 import com.sakeriniwebsite.emusicstore.model.Customer;
 import com.sakeriniwebsite.emusicstore.model.ShippingAddress;
 import com.sakeriniwebsite.emusicstore.service.CustomerService;
@@ -23,9 +24,11 @@ public class RegisterController {
         Customer customer = new Customer();
         BillingAddress billingAddress = new BillingAddress();
         ShippingAddress shippingAddress = new ShippingAddress();
+        Cart cart = new Cart();
 
         customer.setBillingAddress(billingAddress);
         customer.setShippingAddress(shippingAddress);
+        customer.setCart(cart);
 
         model.addAttribute("customer", customer);
 

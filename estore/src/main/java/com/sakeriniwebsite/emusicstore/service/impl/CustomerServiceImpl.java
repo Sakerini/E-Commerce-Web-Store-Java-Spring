@@ -39,16 +39,10 @@ public class CustomerServiceImpl implements CustomerService {
         authority.setAuthority("ROLE_USER");
         authorityService.addAuthority(authority);
 
-        Cart cart = new Cart();
+        Cart cart = cartService.createCart();
         cart.setCustomer(customer);
         customer.setCart(cart);
-
-        cartService.update(cart);
-
-        //cartService.create(cart); // :|
-
         customerDAO.save(customer);
-
     }
 
     @Override

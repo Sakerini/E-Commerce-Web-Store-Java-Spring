@@ -22,8 +22,8 @@ public class MyUserDetails implements UserDetails {
         this.active = user.isEnabled();
         //String[] test = user.getRoles().split(",");
         this.authorities = Arrays.stream(user.getRoles().split(","))
-                                            .map(SimpleGrantedAuthority::new)
-                                            .collect(Collectors.toList());
+                .map(SimpleGrantedAuthority::new)
+                .collect(Collectors.toList());
     }
 
     @Override

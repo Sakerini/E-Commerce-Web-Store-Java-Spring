@@ -29,7 +29,7 @@ public class CartItemServiceImpl implements CartItemService {
     @Override
     public void removeAllCartItems(Cart cart) {
         List<CartItem> cartItems = cart.getCartItems();
-        for (CartItem cartItem: cartItems) {
+        for (CartItem cartItem : cartItems) {
             cartItemDao.delete(cartItem);
         }
     }
