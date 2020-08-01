@@ -23,6 +23,6 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public double getCustomerOrderGrandTotal(int cartId) {
-        return 100;//cartService.getCartById(cartId).getGrandTotal();
+        return cartService.getCartById(cartId).getGrandTotal();
     }
 }
