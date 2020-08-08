@@ -33,7 +33,7 @@
         </div>
 
         <div class="form-group">
-            <label for="password">Passoword</label>
+            <label for="password">Password</label>
             <form:password path="password" id="password" class="form-Control"/>
         </div>
 
