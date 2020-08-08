@@ -45,12 +45,24 @@
 
                     <p ng-controller="cartCtrl">
                         <a href="<c:url value="${url}"/> " class="btn btn-default">Back</a>
-                        <a href="#" class="btn btn-warning btn-large" ng-click="addToCart('${product.productId}')">
-                            <span class="glyphicon glyphicon-shopping-cart"></span> Order Now
-                        </a>
 
-                        <a href="<spring:url value="/customer/cart"/>" class="btn btn-default">
-                            <span class="glyphicon glyphicon-hand-right"></span>Check Cart</a>
+                        <!-- login check -->
+                        <c:if test="${pageContext.request.userPrincipal.name != null}">
+                            <c:if test="${pageContext.request.userPrincipal.name != 'admin'}">
+                                <a href="#" class="btn btn-warning btn-large"
+                                   ng-click="addToCart('${product.productId}')">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Order Now
+                                </a>
+
+                                <a href="<spring:url value="/customer/cart"/>" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-hand-right"></span>Check Cart</a>
+                            </c:if>
+                            <c:if test="${pageContext.request.userPrincipal.name == 'admin'}">
+                                <a href="<spring:url value="/admin/productInventory"/>" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-hand-right"></span>Product Inventory</a>
+                            </c:if>
+                        </c:if>
+
                     </p>
                 </div>
             </div>
